@@ -1,0 +1,17 @@
+{
+    "name": "usersProxy",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+	"start": "node server.js"
+    },
+    "dependencies": {
+	"http-proxy": "0.10.x",
+	"mongoose": "3.6.17",
+	"ncontract": "git://github.com/HonzaL/ncontract.git",
+	"nconfig": "git://github.com/HonzaL/nconfig.git"
+    },
+    "author": "Jan Lisal",
+    "license": "MIT"
+}
