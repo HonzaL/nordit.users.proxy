@@ -4,7 +4,7 @@
  */
 
 var mongoose = require('mongoose')
-  , config = require('nconfig')()
+  , config = require('nconfig')({file: __dirname + '/config/config.js'})
   , fs = require('fs')
 
 // Bootstrap mongoDB connection
@@ -42,7 +42,7 @@ Contract.find({'active': true}, {'_id': 1, 'port': 1}, function(err, data) {
     router.router[config.users.host + "/"] = "127.0.0.1:" + config.users.port
 
     // Zapiseme cesty do souboru
-    fs.writeFile("./router/" + config.routerFile, JSON.stringify(router, null, 4) + "\n", function(err) {
+    fs.writeFile(__dirname + "/router/" + config.routerFile, JSON.stringify(router, null, 4) + "\n", function(err) {
 	if (err) throw err;
 	// exit process
 	process.exit(0);
